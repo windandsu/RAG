@@ -1,4 +1,4 @@
-from . import BaseRetriever
+from .. import BaseRetriever
 from typing import List, Dict, Any
 import numpy as np
 from sentence_transformers import SentenceTransformer
@@ -23,7 +23,9 @@ class DenseRetriever(BaseRetriever):
 
     def retrieve(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
         """执行密集向量检索"""
-        if not self.document_embeddings:
+        # if not self.document_embeddings:
+        #     return []
+        if len(self.document_embeddings) == 0:
             return []
             
         query_embedding = self.model.encode(query)

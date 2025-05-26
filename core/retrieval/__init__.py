@@ -8,7 +8,7 @@ class BaseRetriever(ABC):
         self.config = config
         self.index = None
         self.embedding_model = None
-        self.validate_config()
+        # self.validate_config()
         self.initialize()
 
     @abstractmethod
