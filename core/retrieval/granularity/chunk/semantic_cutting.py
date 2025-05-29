@@ -99,7 +99,7 @@ class SemanticChunking(BaseGranularity):
     def _split_sentences(self, content: str) -> List[str]:
         """将文本分割成句子"""
         # 使用更全面的句子分割正则表达式
-        sentences = re.split(r'[。？！；;?!\n]+', content)
+        sentences = re.split(r'[。？！；;?!]+', content)
         sentences = [s.strip() for s in sentences if s.strip()]
         
         if not sentences:
